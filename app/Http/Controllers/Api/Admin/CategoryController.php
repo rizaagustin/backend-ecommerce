@@ -23,7 +23,6 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->file('image'));
         $validator = Validator::make($request->all(),[
             'image'    => 'required|image|mimes:jpeg,jpg,png|max:2000',
             'name'     => 'required|unique:categories',

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Review;
 use App\Http\Resources\ReviewResource;
+
 class ReviewController extends Controller
 {
     public function store(Request $request)
