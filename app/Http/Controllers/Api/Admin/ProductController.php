@@ -16,7 +16,7 @@ class ProductController extends Controller
 {
     public function index(){
         $product =  Product::with('category')->when(request()->q, function($product){
-            $product = $product->where('name','like', '%'. request()->q . '%');
+            $product = $product->where('title','like', '%'. request()->q . '%');
         })->latest()->paginate(5);
 
         return new ProductResource(true,'List Data Product',$product);
